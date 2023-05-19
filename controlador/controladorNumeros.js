@@ -1,7 +1,5 @@
 import ServicioNumeros from "../servicio/servicioNumeros.js";
 
-//TODO - Revisar que no haya nota
-
 class ControladorNumeros {
   constructor() {
     this.ServicioNumeros = new ServicioNumeros();
@@ -29,10 +27,10 @@ class ControladorNumeros {
 
   obtenerNumeroMasAltoYMasBajo = async (req, res) => {
     try {
-      const numero = await this.ServicioNumeros.obtenerNumeroMasAltoYMasBajo();
-      res.json(numero);
+      const numeros = await this.ServicioNumeros.obtenerNumeroMasAltoYMasBajo();
+      res.json(numeros);
     } catch (error) {
-      console.log("error obtenerCantidadNotaAlta", error);
+      console.log("error obtenerNumeroMasAltoYMasBajo", error);
     }
   };
 

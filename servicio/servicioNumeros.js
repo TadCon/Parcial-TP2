@@ -20,10 +20,13 @@ class ServicioNumeros {
 
   //TODO - que devuelva un objeto
   obtenerNumeroMasAltoYMasBajo = async () => {
-    const { numeros } = await this.obtenerNumeros();
-    const min = Math.min(...numeros);
-    const max = Math.max(...numeros);
-    return { min, max };
+    const numeros = await this.NumerosModel.obtenerNumeros();
+    const valores = numeros.map((n) => n.numero);
+
+    const minimo = Math.min(...valores);
+    const maximo = Math.max(...valores);
+
+    return { minimo, maximo };
   };
 
   obtenerCantidadDeNumeros = async () => {

@@ -1,6 +1,6 @@
 class NumerosModel {
   constructor() {
-    this.numeros = [1,2,3];
+    this.numeros = [];
   }
 
   obtenerNumeros = async () => {
